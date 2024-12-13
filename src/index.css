@@ -1,0 +1,22 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper > main {
+  flex-grow: 1;
+}
+.navbar-pages {
+  background-image: linear-gradient(
+    to right,
+    rgba(39, 147, 235, 0.596),
+    rgba(162, 0, 255, 0.726)
+  );
+  height: 100px;
+}
+
+.footer-page {
+  height: 100px;
+  background-color: rgb(56, 56, 56);
+  color: white;
+}
