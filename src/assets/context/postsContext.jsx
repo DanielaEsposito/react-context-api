@@ -1,8 +1,8 @@
-import { createContext, useContext } from "react";
+import { Children, createContext, useContext } from "react";
 //creo il context
 const PostContext = createContext();
 // esporto il provider
-export const postContextProvider = () => {
+export const PostContextProvider = ({ children }) => {
   const postsData = {
     posts: [
       {
@@ -58,7 +58,9 @@ export const postContextProvider = () => {
     ],
   };
 
-  return <PostContext.provider value={postsData}></PostContext.provider>;
+  return (
+    <PostContext.Provider value={postsData}>{children}</PostContext.Provider>
+  );
 };
 //esporto lo use
 export const usePostsContext = () => useContext(PostContext);

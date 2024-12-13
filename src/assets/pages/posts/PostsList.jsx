@@ -2,26 +2,26 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 export default function PostsList() {
-  // const [posts, setPosts] = useState([]);
-  // const fetchPosts = () => {
-  //   fetch("http://localhost:3000/posts")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setPosts(data);
-  //     });
-  // };
+  const [posts, setPosts] = useState([]);
+  const fetchPosts = () => {
+    fetch("http://localhost:3000/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data);
+      });
+  };
 
-  // useEffect(() => {
-  //   fetchPosts();
-  // });
-  // const fetchDeletePost = (id) => {
-  //   const url = `http://localhost:3000/posts/${id}`;
-  //   fetch(url, { method: "DELETE" })
-  //     .then((res) => res.json())
-  //     .then(() => {
-  //       fetchPosts();
-  //     });
-  // };
+  useEffect(() => {
+    fetchPosts();
+  });
+  const fetchDeletePost = (id) => {
+    const url = `http://localhost:3000/posts/${id}`;
+    fetch(url, { method: "DELETE" })
+      .then((res) => res.json())
+      .then(() => {
+        fetchPosts();
+      });
+  };
   return (
     <>
       <div className="container my-5">
