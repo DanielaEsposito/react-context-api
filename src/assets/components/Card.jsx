@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-export default function Card(img, title, tags, id, fetchDeletePost) {
+export default function Card({ img, title, id, tags = [], fetchDeletePost }) {
   return (
     <>
-      <div key={post.id} className="col">
+      <div key={id} className="col">
         <div className="card">
           <div className="card-img-container">
             <img
@@ -40,7 +40,7 @@ export default function Card(img, title, tags, id, fetchDeletePost) {
       </div>
 
       <div
-        key={post.id}
+        key={id}
         className="modal fade"
         id={`modal-delete-post-${id}`}
         tabIndex="-1"
