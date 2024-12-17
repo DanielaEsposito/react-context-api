@@ -14,17 +14,18 @@ export default function PostsList() {
     <>
       <div className="container my-5">
         <h1 className="my-5 text-center">Post List</h1>
-        <div className="row row-cols-3 g-4"></div>
-        {posts.map((post) => (
-          <Card
-            key={post.id}
-            img={post.img}
-            title={post.title}
-            tags={post.tags}
-            id={post.id}
-            fetchDeletePost={fetchDeletePost}
-          />
-        ))}
+        <div className="row row-cols-3 d-flex  g-4">
+          {posts.map((post) => (
+            <Card
+              key={post.id}
+              img={post.img}
+              title={post.title}
+              tags={post.tags}
+              id={post.id}
+              fetchDeletePost={fetchDeletePost}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
